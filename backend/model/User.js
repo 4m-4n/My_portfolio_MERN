@@ -1,0 +1,69 @@
+import mongoose from "mongoose";
+const userschema=mongoose.Schema({
+    name:String,
+    email:{
+        type:String,
+        unique:true,
+        required:[true,"please enter email"]
+    },
+    password:{
+        type:String,
+        required:[true,"please enter email"],
+        select:false,
+    },
+    timeline:[{
+        title:String,
+        description:String,
+        date:Date,
+    },
+    ],
+    skills:{
+        image1:{
+            public_id:String,
+            url:String
+        },
+        image2:{
+            public_id:String,
+            url:String
+        },
+        image3:{
+            public_id:String,
+            url:String
+        },
+        image4:{
+            public_id:String,
+            url:String
+        },
+        image5:{
+            public_id:String,
+            url:String
+        },
+        image6:{
+            public_id:String,
+            url:String
+        },
+},
+    projects:[
+        {url:String,
+        title:String,
+        image:{
+            public_id:String,
+            url:String
+        },
+        description:String,
+        technologies:String,
+    }
+    ],
+    about:{
+        name:String,
+        title:String,
+        subtitle:String,
+        description:String,
+        qoute:String,
+        avatar:{
+            public_id:String,
+            url:String,
+        }
+    }
+});
+export const User=mongoose.model("User",userschema);

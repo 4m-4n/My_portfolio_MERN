@@ -1,0 +1,230 @@
+.homecanvas{
+    width:100vw;
+    height: 100vh;
+    max-width:100%;
+    filter: blur(1px);
+    position: absolute;
+}
+.homecanvascontainer{
+    background-color:rgb(0,0,0,0);
+    width: 100%;
+    z-index: 2;
+    position: relative;
+    height: 100vh;
+    color: white;
+    display: flex;
+}
+.homecanvascontainer>h1{
+    filter: drop-shadow(0 0 2px rgb(28,116,216));
+    position: absolute;
+    top: 50%;
+    left:0%;
+    background-color: white;
+    padding: 1.5vmax;
+    transform: translate(0%,-50%);
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:  4vmax;
+    font-weight: 700; 
+
+}
+.homecanvascontainer>a{
+    background-color:rgb(0,0,0,0);
+    transition: all 0.5s;
+    color:white;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: none;
+    padding: 2vmax 6vmax;
+    box-sizing: border-box;
+    border: 1px solid white;
+    position: absolute;
+    left: 50%;
+    top:70%;
+    transform: translate(-50%,-50%);
+   }
+   .homecanvascontainer>a:hover{
+    background-color: white;
+    color:black;
+   }
+.homecanvascontainer>h1>p{
+    transition: all 0.5s;
+    color: rgb(15, 14, 53);
+}
+.homecanvascontainer>h1>p:hover{
+    transform: translateY(-10px);
+}
+.homecanvasbox{
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    text-align: center;
+    transform: translate(0%,-50%);
+}
+.homescroll{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    left: 50%;
+    border-radius: 100%;
+    transform: translateY(-100px);
+    padding: 0.5vmax;
+    animation: scrollpop 0.5s ease-in infinite alternate;
+}
+.homescroll>svg{
+    font-size: 3vmax;
+    color:white;
+}
+.homecanvasbox>h2{
+    font-size: 3.5rem;
+    font-weight: 900;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: 20px;
+    line-height: 130px;
+    color: white;
+}
+.homeconatiner{
+    background-color: white;
+    padding-top: 4vmax;
+    border-radius: 0 0 200px 200px;
+    border-bottom: 2px solid white;
+    position: relative;
+    z-index: 1;
+}
+.homeconatiner>h3{
+    text-align: center;
+    color: grey;
+    padding: 4vmax;
+}
+.homeskills{
+    background-color: rgb(15, 14, 53);
+    height: 1300px;
+    position: relative;
+    box-sizing: border-box;
+    perspective: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow-x: hidden;
+    transform: translateY(-200px);
+    margin-bottom: -200px;
+}
+.homeskills>h3{
+    color: white;
+    margin-bottom: 4vmax;
+    font-size: 4vmax;
+    text-align: center;
+}
+.homecubeskill{
+    margin-top: -390px;
+    width: 150px;
+    height: 150px;
+    animation:cubeRotation 15s linear infinite alternate;
+    transform-style: preserve-3d;
+}
+.homecubeskillfaces{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    opacity: 0.7;
+}
+.homecubeskillfaces>img{
+    width: inherit;
+    height: inherit;
+}
+.homecubeskillface1{
+    transform: translate3d(0,0,100px);
+}
+.homecubeskillface2{
+    transform: rotateY(180deg) translate3d(0,0,100px);
+}
+.homecubeskillface3{
+    transform: rotateY(-90deg) translate3d(0,0,100px);
+}
+.homecubeskillface4{
+    transform: rotateY(90deg) translate3d(0,0,100px);
+}
+.homecubeskillface5{
+    transform: rotateX(90deg) translate3d(0,0,100px);
+}
+.homecubeskillface6{
+    transform: rotateX(-90deg) translate3d(0,0,100px);
+}
+.cubeshadow{
+    width:250px;
+    height: 30px;
+    background-color:grey ;
+    border-radius: 50%;
+    animation:cubeshadow 1s ease-in-out infinite alternate;
+    filter: blur(3px);
+    margin-top: -480px;
+}
+.homeboxskill{
+    background-color: rgb(153, 111, 192);
+    padding: 0 2vmax;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 20px;
+}
+.homeboxskill>svg{
+    font-size: 4vmax;
+    color:white;
+    margin: 10px;
+    transition: all 0.5sec;
+}
+.homeboxskill>svg:hover{
+    transform: scale(1.5);
+}
+@keyframes cubeRotation{
+    to{
+        transform: rotateY(360deg) rotateX(480deg) rotateZ(720deg);
+    }
+}
+@keyframes cubeshadow{
+    to{
+        transform:scale(1.2) translateY(-5px);
+    }
+}
+@keyframes homeboxskillanion {
+    from{
+        right: -300px;
+    }
+    to{
+        right:40px;
+    }
+}
+@keyframes homeboxskillanioff {
+    from{
+        right: 40px;
+    }
+    to{
+        right:-300px;
+    }
+}
+@keyframes scrollpop {
+    to{
+        transform: translateY(-200%);
+    }
+}
+@media screen and (max-width:600px){
+    
+    .homecanvasbox>h2{
+        font-size: 2rem;
+        font-weight: 900;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        letter-spacing: 10px;
+        line-height: 130px;
+        color: white;
+    }
+    .homecanvascontainer>a{
+        margin-top: 30px;
+    }
+}
