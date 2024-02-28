@@ -1,10 +1,11 @@
 import axios from "axios"
+import { server } from "..";
 export const getuser=()=>async(dispatch)=>{
 try {
     dispatch({
         type:"GET_USER_REQUEST"
     });
-    const {data}=await axios.get("/api/v1/user");
+    const {data}=await axios.get(`${server}/api/v1/user`);
     dispatch({
         type:"GET_USER_SUCCESS",
         payload:data.usr
@@ -21,7 +22,7 @@ export const login=(email,password)=>async(dispatch)=>{
         dispatch({
             type:"LOGIN_REQUEST"
         });
-        const {data}=await axios.post("/api/v1/login",{email,password},{
+        const {data}=await axios.post(`${server}/api/v1/login`,{email,password},{
             headers:{
                 "Content-Type":"application/json",
             }
@@ -42,7 +43,7 @@ export const login=(email,password)=>async(dispatch)=>{
             dispatch({
                 type:"LOGOUT_REQUEST"
             });
-            const {data}=await axios.get("/api/v1/logout");
+            const {data}=await axios.get(`${server}/api/v1/logout`);
             dispatch({
                 type:"LOGOUT_SUCCESS",
                 payload:data.message,
@@ -59,7 +60,7 @@ export const login=(email,password)=>async(dispatch)=>{
                 dispatch({
                     type:"USER_LOAD_REQUEST"
                 });
-                const {data}=await axios.get("/api/v1/me");
+                const {data}=await axios.get(`${server}/api/v1/me`);
                 dispatch({
                     type:"USER_LOAD_SUCCESS",
                     payload:data.usr,
@@ -76,7 +77,7 @@ export const login=(email,password)=>async(dispatch)=>{
                     dispatch({
                         type:"UPDATE_USER_REQUEST"
                     });
-                    const {data}=await axios.put("/api/v1/admin/update",{name,email,password,skills,about},{
+                    const {data}=await axios.put(`${server}/api/v1/admin/update`,{name,email,password,skills,about},{
                         headers:{
                             "Content-Type":"application/json",
                         }
@@ -97,7 +98,7 @@ export const login=(email,password)=>async(dispatch)=>{
                         dispatch({
                             type:"ADD_TL_REQUEST"
                         });
-                        const {data}=await axios.post("/api/v1/admin/timeline/add",{title,description,date},{
+                        const {data}=await axios.post(`${server}/api/v1/admin/timeline/add`,{title,description,date},{
                             headers:{
                                 "Content-Type":"application/json",
                             }
@@ -118,7 +119,7 @@ export const login=(email,password)=>async(dispatch)=>{
                             dispatch({
                                 type:"DELETE_TL_REQUEST"
                             });
-                            const {data}=await axios.delete(`/api/v1/admin/timeline/${id}`);
+                            const {data}=await axios.delete(`${server}/api/v1/admin/timeline/${id}`);
                             dispatch({
                                 type:"DELETE_TL_SUCCESS",
                                 payload:data.message,
@@ -135,7 +136,7 @@ export const login=(email,password)=>async(dispatch)=>{
                                 dispatch({
                                     type:"ADD_PROJECT_REQUEST"
                                 });
-                                const {data}=await axios.post("/api/v1/admin/project/add",{url,title,image,description,technologies},{
+                                const {data}=await axios.post(`${server}/api/v1/admin/project/add`,{url,title,image,description,technologies},{
                                     headers:{
                                         "Content-Type":"application/json",
                                     }
@@ -156,7 +157,7 @@ export const login=(email,password)=>async(dispatch)=>{
                                     dispatch({
                                         type:"DELETE_PROJECT_REQUEST"
                                     });
-                                    const {data}=await axios.delete(`/api/v1/admin/project/${id}`);
+                                    const {data}=await axios.delete(`${server}/api/v1/admin/project/${id}`);
                                     dispatch({
                                         type:"DELETE_PROJECT_SUCCESS",
                                         payload:data.message,
@@ -173,7 +174,7 @@ export const login=(email,password)=>async(dispatch)=>{
                                         dispatch({
                                             type:"CONTACT_REQUEST"
                                         });
-                                        const {data}=await axios.post("/api/v1/contact",{name,email,message},{
+                                        const {data}=await axios.post(`${server}/api/v1/contact`,{name,email,message},{
                                             headers:{
                                                 "Content-Type":"application/json",
                                             }

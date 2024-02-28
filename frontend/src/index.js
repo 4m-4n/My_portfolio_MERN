@@ -5,6 +5,7 @@ import {Provider} from "react-redux" //implementing redux
 import store from './Store.js';
 import {Provider as AlertProvider,positions,transitions} from "react-alert"
 import alertTemplate from "react-alert-template-basic"
+export const server="http://localhost:4500"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const options={
   position:positions.BOTTOM_RIGHT,
