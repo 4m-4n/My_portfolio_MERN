@@ -9,8 +9,8 @@ userrouter.get("/user",getUser);
 userrouter.get("/me",isauthenticated,myprofile);
 userrouter.post("/contact",contact);
 userrouter.put("/admin/update",isauthenticated,updateuser);
-userrouter.post("/admin/timeline/add",isauthenticated,addtimeline);
-userrouter.post("/admin/project/add",isauthenticated,addproject);
-userrouter.delete("/admin/project/:id",isauthenticated,deleteproject);
-userrouter.delete("/admin/timeline/:id",isauthenticated,deletetimeline);
+userrouter.post("/admin/timeline/add",addtimeline);
+userrouter.post("/admin/project/add",addproject);
+userrouter.delete("/admin/project/:id",deleteproject);
+userrouter.delete("/admin/timeline/:id",deletetimeline);
 
