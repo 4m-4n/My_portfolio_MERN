@@ -18,7 +18,8 @@ res.status(200).cookie("token",token,{
     httpOnly:true,
 }).json({
     success:true,
-    message:"Logged in successfully"
+    message:"Logged in successfully",
+    token
 });
 } catch (error) {
     return res.status(400).json({
