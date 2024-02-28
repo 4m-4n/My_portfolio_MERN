@@ -6,10 +6,9 @@ export const app=express();
 app.use(express.json({limit:"50mb"}));
 app.use(express.urlencoded({extended:true,limit:"50mb"}));
 app.use(cookieParser());
-
-app.use("/api/v1",userrouter);
 app.use(cors({
     origin:"*",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials:true,
 }))
+app.use("/api/v1",userrouter);
