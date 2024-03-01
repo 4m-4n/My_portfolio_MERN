@@ -6,7 +6,7 @@ export const userrouter=express.Router();
 userrouter.post("/login",login);
 userrouter.get("/logout",logout);
 userrouter.get("/user",getUser);
-userrouter.get("/me",isauthenticated,myprofile);
+userrouter.get("/me",myprofile);
 userrouter.post("/contact",contact);
 userrouter.put("/admin/update",isauthenticated,updateuser);
 userrouter.post("/admin/timeline/add",isauthenticated,addtimeline);
