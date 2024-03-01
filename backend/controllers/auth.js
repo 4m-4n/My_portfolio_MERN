@@ -2,7 +2,7 @@ import jwt, { decode } from "jsonwebtoken"
 import { User } from "../model/User.js"
 export const isauthenticated=async(req,res,next)=>{
 try {
-    const {token}=req.headers?.authorization;
+    const token= await req.headers?.Authorization;
     if(!token){
         return res.status(400).json({
             success:true,
